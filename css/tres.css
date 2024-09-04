@@ -1,0 +1,466 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import url('https://fonts.cdnfonts.com/css/aller');
+
+*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	    text-decoration: none;
+	    font-family: 'Aller', sans-serif;
+	    font-size: clamp(1rem, NaNrem + NaNvw, 1rem);
+	    field-sizing: content;
+	    letter-spacing: -1px;
+	    
+       /*the clamp calculator
+	line-height: 30px;*/
+    
+	}
+
+
+::-webkit-scrollbar{
+    width: 12px;
+    background-color: #F5F5F5;
+}
+::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    background-color: #e3e4e5;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: #0dcaf0;
+    background-image: -webkit-linear-gradient(90deg,transparent,rgba(0, 0, 0, 0.4) 50%,transparent,transparent)
+}
+		
+	.navbar{
+		width: 100%;
+		max-width: 1366px;
+		height: auto;
+		max-height: 360px;
+		border-radius: 0px 0px 20px 20px;
+		background: linear-gradient(90deg, rgba(240,240,240,1) 10%, rgba(136,137,241,1) 29%, rgba(71,72,238,1) 42%, rgba(33,34,217,1) 53%, rgba(8,9,173,1) 68%, rgba(4,5,158,1) 100%);
+		text-align: center;
+	}
+
+
+.nav-item{
+    
+ margin-right: 5px;
+
+  }
+	  /* Remove border from toggler */
+.navbar-toggler {
+    border: 0 !important;
+	 
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+	
+}
+
+/* Lines of the Toggler */
+.toggler-icon{
+    width: 30px;
+    height: 3px;
+    background-color: #FFFFFF;
+    display: block;
+    transition: all 0.2s;
+}
+
+/* Adds Space between the lines */
+.middle-bar{
+    margin: 5px auto;
+}
+
+/* State when navbar is opened (START) */
+.navbar-toggler .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+}
+
+.navbar-toggler .middle-bar {
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.navbar-toggler .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+}
+/* State when navbar is opened (END) */
+
+/* State when navbar is collapsed (START) */
+.navbar-toggler.collapsed .top-bar {
+    transform: rotate(0);
+}
+
+.navbar-toggler.collapsed .middle-bar {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.navbar-toggler.collapsed .bottom-bar {
+    transform: rotate(0);
+}
+/* State when navbar is collapsed (END) */
+
+/* Color of Toggler when collapsed */
+.navbar-toggler.collapsed .toggler-icon {
+   background-color: #FFFFFF;
+}
+ .enlaces{
+    display: inline-block;
+
+
+  }
+  .enlaces a{
+    color: #EFEFEF;
+	font-size: 19px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 2px;
+    text-align: center;
+   
+	 
+  }
+  .enlaces i{
+    margin-right: 5px;
+	 
+  }
+  .enlaces a:hover{
+     text-decoration: none;
+     color:#FFFFFF;
+
+  } 
+  
+ .soa {
+	color: black;
+  }
+
+  .soa:hover {
+	color: black;
+  }
+
+/* efectos del menu*/
+
+.headroom {
+    will-change: transform;
+    transition: transform 200ms linear;
+	
+	
+}
+.headroom--pinned {
+    transform: translateY(0%);
+	 
+	
+}
+.headroom--pinned:hover{  box-shadow: 5px 5px 0 #00C;
+  }
+.headroom--unpinned {
+    transform: translateY(-100%);
+	
+
+
+}
+
+
+/* baarra social */
+	.container-bar{
+		width: 100%;
+		max-width: 55px;
+		position: fixed;
+		right: 0;
+		top: 30%;
+		z-index: 2;
+	}
+	.container-bar a{
+		display: block;
+		padding: 15px;
+		text-decoration: none;
+		font-size: 17px;
+		position: relative;
+		transition: all 500ms ease;
+		color: #fff;
+		text-align: center;
+	}
+	.container-bar a:hover{
+		background: #1c1c1c;
+		text-decoration: none;
+		color: white;
+	}
+	.container-bar .icon-facebook-with-circle{
+		background: #3b5998;
+		border-radius: 5px 0px 0px 0px;
+	}
+	.container-bar .icon-youtube-with-circle{
+		background: #e52a23;
+	}
+
+	.container-bar  .bi-twitter-x{
+		background: gray;
+	}
+	.container-bar .icon-mail{
+		background: #0dcaf0;
+	}
+	
+	.container-bar .icon-instagram-with-circle{
+		background: #747473;
+		border-radius: 0px 0px 0px 5px;
+	}
+	.container-bar .title{
+		position: fixed;
+		background: #1c1c1c;
+		padding: 6px;
+		border-radius: 3px;
+		font-size: 15px;
+		margin-top: -4px;
+		transition: all 500ms ease;
+		opacity: 0;
+		visibility: hidden;
+		z-index: -1;
+		color: white;
+	}
+	.container-bar a:hover .title{
+		opacity: 1;
+		visibility: visible;
+		margin-left: -150px;
+		color: white;
+	}
+	.container-bar .title:after{
+		position: absolute;
+		content: '';
+		border-left: 5px solid transparent;
+		border-left: 5px solid #1c1c1c;
+		border-top: 6px solid transparent;
+		border-bottom: 6px solid transparent;
+		left: 100%;
+		top: 8px;
+		color: white;
+	}
+	#btn-social{
+		display: none;
+	}
+	.icon-play-1{
+		cursor: pointer;
+		transition: all 0.4s;
+		font-size: 27px;
+		margin-bottom: 2px;
+		margin-left: 32px;
+		display: inline-block;
+		transform: rotate(180deg);
+		color: #000000;
+		font-weight: bold;
+	}
+	#btn-social:checked ~.icon-play-1{
+		transform: rotate(0deg);
+	}
+	.icon-social{
+		transition: all 0.4s;
+		transform: translateX(0%);
+		box-shadow: 0px 1px 10px rgba(0,0,0,0.3);
+	}
+	#btn-social:checked ~ .icon-social{
+		transform: translateX(100%);
+	}
+/* barra social arriba */
+
+.icon-facebook{  color:#3b5998; text-decoration: none;}
+.icon-facebook:hover{text-decoration: none; color:#3b5998;}
+
+.x{color:white; text-decoration: none;}
+.x:hover{text-decoration: none; color:white;}
+
+.icon-youtube{  color:#c4302b; text-decoration: none;}
+.icon-youtube:hover{text-decoration: none; color:#c4302b;}
+
+.bi-envelope{  color:#6100FF; text-decoration: none;}
+.bi-envelope:hover{text-decoration: none; color:#6100FF;}
+
+.icon-instagram{  color:#666666; text-decoration: none;}
+.icon-instagram:hover{text-decoration: none; color:#666666;}
+/* ir arriba*/
+.icon-chevron-small-up{
+	display:none;
+	padding:10px;
+	background-color:#024959;
+	font-size:20px;
+	color:#fff;
+	cursor:pointer;
+	position: fixed;
+	bottom:101px;
+	right:10px;
+	z-index: 1;
+	border-radius: 5px 5px 5px 5px;
+	transition: bottom 0.5s;
+	
+}
+
+.icon-chevron-small-down{
+    display:none;
+	padding:10px;
+	background-color:#024959;
+	font-size:20px;
+	color:#fff;
+	cursor:pointer;
+	position: fixed;
+	bottom: 60px;
+  right: 10px;
+	z-index: 1;
+	border-radius: 5px 5px 5px 5px;
+	transition: bottom 0.5s;
+  
+}
+  .card {
+    transition: transform 0.2s ease;
+    box-shadow: 0 4px 6px 0 rgba(22, 22, 26, 0.18);
+    border-radius: 0;
+    border: 0;
+    margin-bottom: 1.5em;
+	
+  }
+  .card:hover {
+    transform: scale(1.1);
+	cursor: pointer;
+  }
+
+body{
+
+	font-family: 'Aller', sans-serif;
+	 scroll-padding-top: 65px;
+  }
+  
+/* dark togle*/
+body.dark{
+	background: #F4F3EE;
+	color: black;
+  }
+
+  .switch {
+	background: #000000;
+	border-radius: 1000px;
+	border: none;
+	position: relative;
+	cursor: pointer;
+	display: flex;
+	outline: none;
+	z-index: 1;
+  }
+  
+  .switch::after {
+	content: "";
+	display: block;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	background: #ffffff;
+	top: 0;
+	left: 0;
+	right: unset;
+	border-radius: 100px;
+	-webkit-transition: .3s ease all;
+	transition: .3s ease all;	
+  }
+  
+  .switch.active {
+	background: yellow;
+	color: #000;
+  }
+  
+  .switch.active::after {
+	right: 0;
+	left: unset;
+	
+  }
+  
+  .switch span {
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	display: block;
+	background: none;
+	color: #fff;
+  }
+
+  .soa {
+	color: black;
+  }
+
+  .soa:hover {
+	color: black;
+  }
+
+ .icon-resize-full-screen{
+	color: black;
+	font-weight: bold;
+	z-index: 1;
+	position: absolute;
+    margin-left: -35px;
+    cursor:pointer;
+	margin-top: 8px;
+	font-size: 25px;
+	filter: opacity(46%);
+	background-color: #e3f2fd;
+	border-radius: 150px 150px 150px 150px;
+	
+  }
+
+  .icon-resize-full-screen:hover{
+	filter: opacity(99%);
+	background-color: white;
+	font-size: 30px;
+  }
+
+/*Estilo de la barra lateral*/
+
+#barraLateral{
+	/*posicion y tamaño*/
+	position: fixed;
+	top: 30%;
+	left: -70px;
+	width: 80px;
+	height: 40%;
+	/*Utilizado para centrar los elementos verticalmente*/
+	display: table;  
+	/*visualización*/
+	background-color: #F5F4F4;
+	border: 1px solid white;
+	border-radius: 20px;
+	text-align: center;
+	z-index:600;                                                                         
+	/*efecto*/
+	-webkit-transition: left 1s;
+	-ms-transition: left 1s;
+	-o-transition: left 1s;
+	-moz-transition: left 1s;
+	text-decoration:none;
+}
+
+#barraLateral:hover{
+left: 0;
+	text-decoration:none;
+}
+
+
+#elementos{
+	/*Utilizado para centrar los elementos verticalmente*/
+	display: table-cell; 
+	vertical-align: middle;
+}
+
+.elementoBarra{
+	width: 100%;
+	height: auto;
+	margin:auto auto;
+	text-decoration:none;
+	color: darkblue;
+    border-radius: 50px;
+}
+
+

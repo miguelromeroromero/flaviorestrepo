@@ -1,0 +1,176 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import url('https://fonts.cdnfonts.com/css/aller');
+
+.thumbnails {
+  margin-left: 0px;
+  list-style: none;
+ 
+}
+
+.thumbnails:before,
+.thumbnails:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.thumbnails:after {
+  clear: both;
+}
+
+
+.thumbnails > li {
+  float: left;
+  margin-bottom: 50px;
+  margin-left: 50px;
+}
+
+.span3 {
+  width: 220px;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.thumbnail {
+  display: block;
+
+  border: 1px solid #ddd;
+ border-radius: 4px;
+ box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+ transition: all 0.2s ease-in-out;
+   
+}
+
+a.thumbnail:hover,
+a.thumbnail:focus {
+  border-color: #0088cc;
+  box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+    
+}
+
+.thumbnail > img {
+  display: block;
+  max-width: 100%;
+  max-height: auto;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+.row-fluid:before,
+.row-fluid:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.row-fluid:after {
+  clear: both;
+}
+
+.row-fluid [class*="span"] {
+  display: block;
+  float: left;
+  width: 100%;
+  min-height: 30px;
+  margin-left: 0%;
+  box-sizing: border-box;
+ 
+}
+
+.row-fluid [class*="span"]:first-child {
+  margin-left: 0;
+}
+
+
+.row-fluid .span6 {
+  width: 100%;
+ 
+}
+
+
+.img-polaroid {
+  max-width: 200px;
+  max-height: 200px;
+  padding: 4px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* set relative to positionante content correctly */
+
+
+.gridex {
+	position: relative;
+}
+
+/* animatable grid container */
+
+
+.gd-expander {
+	position: absolute;
+	overflow: hidden;
+	height: 800px;
+	max-height: 800px;
+	margin-top: 20px;
+	width: 100%;
+	max-width: 100%;
+	left: 30px; /* standar row margin is 30px */
+}
+
+/* inner content container */
+.gd-inner {
+	padding-bottom:  80px;
+	background: #ccc;
+}
+
+/* top arrow when expanded */
+.gridex > li > a {
+	position: relative;
+}
+.gridex > .gd-expanded > a::after {
+	top: auto;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-bottom-color: #ccc;
+	border-width: 25px;
+	left: 50%;
+	margin: -25px 0 0 -25px;
+}
+
+
+@media (max-width: 1200px) {
+	.gd-expander {
+		left: 40px; /* decrement left as bootstrap does */
+	}
+}
+
+@media (max-width: 767px) {
+	.gd-inner img {
+		/*display: none;  hide to not overflow */
+	}
+	.gd-expander {
+		left: 40px; /* remove left as bootstrap does */
+	}
+}
+
+.btn-success{
+	margin-top: -14px;
+}
