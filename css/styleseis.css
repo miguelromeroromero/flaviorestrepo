@@ -548,11 +548,23 @@ input{
 
 
 
-body {
-  background-size: cover;font-family: 'Aller', sans-serif;
+body{
+
+	font-family: 'Aller', sans-serif;
 	 scroll-padding-top: 65px;
-	letter-spacing: -1px;
-}
+		transition: all .3s;
+  }
+
+body::after{
+			content: '';
+			width:100%;
+			height: 100%;
+			position: fixed;
+			top: -100vw;
+			left: 0;
+			background: #fff;
+			transition: all .3s;
+		}
 /* dark togle*/
 
 body.dark{
@@ -984,4 +996,6 @@ left: 0;
     border-radius: 50px;
 }
 
-
+.loading::after{
+			top: 0;
+		}

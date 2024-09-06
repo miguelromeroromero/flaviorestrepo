@@ -334,12 +334,23 @@
   }
 
 
-body{
+  body{
 
 	font-family: 'Aller', sans-serif;
 	 scroll-padding-top: 65px;
+		transition: all .3s;
   }
- 
+
+body::after{
+			content: '';
+			width:100%;
+			height: 100%;
+			position: fixed;
+			top: -100vw;
+			left: 0;
+			background: #fff;
+			transition: all .3s;
+		}
 /* dark togle*/
 body.dark{
 	background: #F4F3EE;
@@ -490,5 +501,7 @@ left: 0;
 }
 
 
-
+.loading::after{
+	top: 0;
+}
 
