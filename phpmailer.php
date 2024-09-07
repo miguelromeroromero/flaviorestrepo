@@ -158,7 +158,7 @@ HTML;
 
 $mailer = new PHPMailer();
 $mailer->setFrom( $email, "$nombres $apellidos" );
-$mailer->addAddress('clinicaflaviorestrepoladorada@gmail.com','Sitio web Clínica Flavio Restrepo');
+$mailer->addAddress('solicitudclinicaflaviorestrepo@gmail.com','Sitio web Clínica Flavio Restrepo');
 $mailer->Subject = "Mensaje web: $asunto";
 $mailer->msgHTML($body);
 $mailer->AltBody = strip_tags($body);
