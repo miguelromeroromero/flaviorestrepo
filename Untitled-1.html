@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envío de formulario por WhatsApp</title>
+    <!--<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+	  <link href="fontawesome-free-6.5.2-web/css/all.min.css" rel="stylesheet">-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+	<style>*{
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	font-family: "Montserrat", sans-serif;
+}
+
+body{
+	min-height: 100vh;
+	background-image: linear-gradient(120deg, #3498db, #8e44ad);
+}
+
+.formulario{
+	width: 360px;
+	background: #f1f1f1;
+	height: 400px;
+	padding: 80px 40px;
+	border-radius: 10px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+.formulario h1{
+	text-align: center;
+	margin-bottom: 60px;
+	color: #333;
+	font-weight: 600;
+}
+		/*
+.box-input{
+	border-bottom: 2px solid #adadad;
+	position: relative;
+	margin: 30px 0;
+}
+
+.box-input input{
+	font-size: 16px;
+	color: #333;
+	border: none;
+	width: 100%;
+	outline: none;
+	background: none;
+	padding: 0 5px;
+	height: 40px;
+}
+
+.box-input span::before{
+	content: attr(data-placeholder);
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	color: #adadad;
+	transform: translateY(-50%);
+	z-index: -1;
+	transition: .5s;
+}
+
+.box-input span::after{
+	content: '';
+	position: absolute;
+	width: 0%;
+	height: 2px;
+	background: linear-gradient(120deg, #3498db, #8e44ad);
+	transition: .5s;
+}*/
+
+.focus + span::before{
+	top: -5px;
+}
+
+.focus + span::after{
+	width: 100%;
+}
+
+.boton{
+	display: block;
+	width: 100%;
+	height: 50px;
+	background-color: #48bb78;
+	border: solid 2px #48bb78;
+	color: #fff;
+	border-radius: 5px;
+	font-weight: 600;
+	font-size: 18px;
+	box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.1);
+}
+
+.boton:hover{
+	background-color: #2F855A;
+	border: solid 2px #2F855A;
+	transition: .5s;
+}</style>
+</head>
+<body>
+
+    <form id="form" class="formulario">
+        <h1>Envío de formulario por WhatsApp</h1>
+        <div class="box-input">
+            <input name="nombres" id="nombres" type="text" required>
+            <span data-placeholder="Escriba su Nombre"></span>
+        </div>
+        <div class="box-input">
+            <input name="apellidos" id="apellidos" type="text" required>
+            <span data-placeholder="Escriba sus Apellidos"></span>
+        </div>
+		 <div class="box-input">
+       
+			 
+			 <select id="tipo_documento" name="tipo_documento" class="form-select option-selected" aria-label="Default select example" required="required"  style="width: 100%; max-width: 700px;">
+  <option selected disabled value=""  class="requerido" style="color: red;"></option>
+  <option value="RC" {{option.selected(color === "RC")}}>RC - Registro Civil </option>
+  <option value="CC" {{option.selected(color === "CC")}}>CC - Cédula Ciudadanía</option>
+  <option value="CE" {{option.selected(color === "CE")}}>CE - Cédula Extranjera</option>
+  <option value="PPT" {{option.selected(color === "PPT")}}>PPT - Permiso Por Protección Temporal</option>
+  <option value="TI" {{option.selected(color === "TI")}}>TI - Tarjeta Identidad</option>
+  <option value="ADS" {{option.selected(color === "ADS")}}>ADS - Adulto Sin Identificación</option>
+</select>
+            <span data-placeholder="Defina su tipo de documento"></span>
+        </div>
+		 <div class="box-input">
+            <input name="documento" id="documento" type="text" required>
+            <span data-placeholder="Escriba su numero documento"></span>
+        </div>
+		 <div class="box-input">
+            <input name="direccion" id="direccion" type="text" required>
+            <span data-placeholder="Escriba su direccion"></span>
+        </div>
+		 <div class="box-input">
+            <input name="telefono" id="telefono" type="text" required>
+            <span data-placeholder="Escriba su numero telefono"></span>
+        </div>
+        <div class="box-input">
+            <input name="email" id="email" type="email" required>
+            <span data-placeholder="Escriba su Correo Electrónico"></span>
+        </div>
+		 <div class="box-input">
+            <input name="asunto" id="asunto" type="text" required>
+            <span data-placeholder="Escriba su asunto"></span>
+        </div>
+		 <div class="box-input">
+            <input name="message" id="message" type="text" required>
+            <span data-placeholder="Escriba su mensaje"></span>
+        </div>
+		 <div class="box-input">
+            <input name="acepta_terminos" id="acepta_terminos" type="checkbox" required>
+            <span data-placeholder="Acepte Terminos"></span>
+        </div>
+        <button id="button" type="submit" class="boton"><i class="fab fa-whatsapp"></i> Enviar WhatsApp</button>
+    </form>
+
+ <!--<script type="text/javascript">
+        $(".box-input input").on("focus", function(){
+            $(this).addClass("focus");
+        });
+
+        $(".box-input input").on("blur", function(){
+            if($(this).val() == ""){
+                $(this).removeClass("focus");
+            }
+        });
+
+    </script>-->
+
+      <!--<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+   <script src="whatsapp.js"></script> -->
+	<script>function isMobile() {
+    if (sessionStorage.desktop)
+        return false;
+    else if (localStorage.mobile)
+        return true;
+    var mobile = ['iphone', 'ipad', 'android', 'blackberry', 'nokia', 'opera mini', 'windows mobile', 'windows phone', 'iemobile'];
+    for (var i in mobile)
+        if (navigator.userAgent.toLowerCase().indexOf(mobile[i].toLowerCase()) > 0) return true;
+    return false;
+}
+
+const formulario = document.querySelector('#form');
+const buttonSubmit = document.querySelector('#button');
+const urlDesktop = 'https://web.whatsapp.com/';
+const urlMobile = 'whatsapp://';
+const telefon = '573144781637';
+
+formulario.addEventListener('submit', (event) => {
+    event.preventDefault()
+    buttonSubmit.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i>'
+    buttonSubmit.disabled = true
+    setTimeout(() => {
+        let nombres = document.querySelector('#nombres').value
+        let apellidos = document.querySelector('#apellidos').value
+	    let tipo_documento = document.querySelector('#tipo_documento').value
+		let documento = document.querySelector('#documento').value
+		let direccion = document.querySelector('#direccion').value
+		let telefono = document.querySelector('#telefono').value
+        let email = document.querySelector('#email').value
+		let asunto = document.querySelector('#asunto').value
+		let message = document.querySelector('#message').value
+		let acepta_terminos = document.querySelector('#acepta_terminos').value
+        let mensaje = 'send?phone=' + telefon + '&text=*Mensaje enviado desde www.clinicaflaviorestrepo.com*%0ANombres Usuario:%0A' + nombres + '%0A*Apellidos Usuario:*%0A' + apellidos + '%0A*Tipo Documento Usuario:*%0A' + tipo_documento + '%0A*Numero Documento Usuario:*%0A' + documento + '%0A*Dirección:*%0A' + direccion + '%0A*Teléfono Usuario:*%0A' + telefono + '%0A*Correo Electrónico Usuario:%0A' + email + '%0A*Asunto Usuario:%0A' + asunto + '%0A*Mensaje Usuario:%0A' + message + '%0A*Usuario Acepto Términos:%0A' + acepta_terminos +''
+        if(isMobile()) {
+            window.open(urlMobile + mensaje, '_blank')
+        }else{
+            window.open(urlDesktop + mensaje, '_blank')
+        }
+        buttonSubmit.innerHTML = '<i class="fab fa-whatsapp"></i> Enviar WhatsApp'
+        buttonSubmit.disabled = false
+    });
+});</script>
+</body>
+</html>
